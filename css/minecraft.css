@@ -65,32 +65,26 @@ tr {
     border: 1px black solid;
     margin: 10px;
 }
-
-i {
-    background-color: white;
-    height: fit-content;
-    widows: auto;
-    /* border: 1px black solid; */
+.inventory{
+    color:white;
+    margin-left: auto;
+    margin-right: auto
 }
+#inventory-item{
+   
+    height: 50px;
+    width: 50px;
+    border: 1px black solid;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
 
-.features div {
-    margin: 5px
 }
-
-input {
-    width: fit-content;
+.box{
+    opacity: 0.8;
+    background-color: darkgrey
 }
+button{
+    margin: 10px;
 
-#height,
-#width {
-    width: 40px;
-}
-
-.hidden {
-    position: absolute;
-    left: -10000px;
-    top: auto;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
 }
