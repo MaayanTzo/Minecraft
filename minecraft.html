@@ -1,19 +1,84 @@
 <!DOCTYPE html>
-<HTML>
-
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MineCraft</title>
     <link rel="stylesheet" type="text/css" href="./css/minecraft.css">
+
 </head>
-
 <body>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"> </script>
 
+        <div class="toolbox">
 
+                <table class="color_pallet">
+                    <caption>Color Pallet</caption>
+        
+                    <tbody class="color">
+                        <tr>
+                            <td class="pallet" id="blue" title="blue"></td>
+                            <td class="pallet" id="red" title="red"></td>
+                        </tr>
+                        <tr>
+                            <td class="pallet" id="yellow" title="yellow"></td>
+                            <td class="pallet" id="black" title="black"></td>
+                        </tr>
+                        <tr>
+                            <td class="pallet" id="green" title="green"></td>
+                            <td class="pallet" id="brown" title="brown"></td>
+                        </tr>
+                        <div class="border"></div>
+                        <div class="brush_sizes">
+                            <i class="fas fa-eraser fa-2x color brush_sizes" id="white" title="5 pixels"></i>
+                            <i class="fas fa-eraser fa-3x color brush_sizes" id="white" title="10 pixels"></i>
+                            <i class="fas fa-eraser fa-4x color brush_sizes" id="white" title="20 pixels"></i>
+                        </div>
+                    </tbody>
+                </table>
+                <div class="features">
+                    <div class="border"></div>
+                    <div class="size">
+                        Canvas size:
+                        <div>
+                            Height:
+                            <input type="number" id="height" placeholder="500 pixels">
+                            <button id="setHeight">Set</button>
+                        </div>
+                        <div>
+                            Width:
+                            <input type="number" id="width" placeholder="500 pixels">
+                            <button id="setWidth">Set</button>
+                        </div>
+                    </div>
+                    <div class="border"></div>
+                    <div class="clear">
+                        <button id="clear_screen">Clear screen</button>
+                    </div>
+                    <div class="border"></div>
+                    <div class="brush_size">
+                        <i id="5px" class="fas fa-pen fa-2x brush_sizes" title="5 pixels"></i>
+                        <i id="10px" class="fas fa-paint-brush fa-2x brush_sizes" title="10 pixels"></i>
+                        <i id="20px" class="fas fa-brush fa-2x brush_sizes" title="20 pixels"></i>
+                    </div>
+                    <div class="local-storage-button">
+                        <button id="save">Save</button>
+                        <button id="load">Load</button>
+                    </div>
+                    <div>
+                        <button id="rotate-right">Rotate to right</button>
+                        <button id="rotate-left">Rotate to left</button>
+                        <button id="flip">Flip</button>
+                    </div>
+                    <div class="color_pallet">
+                        <input type="color" id="c" tabindex=-1 class="hidden">
+                        <input type="button" id="color-picker" value="Color picker">
+                    </div>
+                </div>
+            </div>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"> </script>
+
+            
     <script src="./js/minecraft.js"></script>
 </body>
-
-</HTML>
+</html>

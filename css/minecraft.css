@@ -1,3 +1,107 @@
-.tile{
-    background-color: blue;
+body {
+    margin: 0;
+    margin-top: 20px;
+    display: inline-flex;
+    background-color: darkgray;
+    position: relative;
+    background: url(https://images.pexels.com/photos/1571174/pexels-photo-1571174.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) no-repeat center center fixed;
+    background-size: cover
+    
+
 }
+
+.toolbox {
+    border: 1px black solid;
+    width: 200px;
+    height: 600px;
+    margin-right: 250px;
+    background-color: grey;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    opacity: 0.8;
+}
+
+#canvas {
+    border: 1px black solid;
+    width: 500px;
+    height: 500px;
+    background-color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 15px 20px;
+}
+
+tr {
+    margin: 20px;
+}
+.color_pallet td{
+    border: 1px black solid;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px
+}
+.pallet{
+    width: 40px;
+    height: 40px;
+}
+
+#blue {
+    background-color: blue
+}
+
+#red {
+    background-color: red;
+}
+
+#yellow {
+    background-color: yellow;
+}
+
+#black {
+    background-color: black;
+}
+
+#green {
+    background-color: green;
+}
+
+#brown {
+    background-color: brown;
+}
+
+.border {
+    border: 1px black solid;
+    margin: 10px;
+}
+
+i {
+    background-color: white;
+    height: fit-content;
+    widows: auto;
+    /* border: 1px black solid; */
+}
+.features div{
+    margin: 5px
+}
+input {
+    width: fit-content;
+}
+#height, #width{
+    width: 40px;
+}
+#clear_All{
+    text-align: center
+}
+.hidden {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
