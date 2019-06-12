@@ -2,11 +2,30 @@ body {
     margin: 0;
     margin-top: 20px;
     display: inline-flex;
-    background-color: darkgray;
     position: relative;
     background-size: cover
 }
-
+.container{
+    width: calc(17*30px);
+    height: calc(17*30px);
+    line-height:0;
+}
+.tile{
+    background-color: blue;
+    height: 15px;
+    width: 15px;
+    border: 1px solid white;
+    display: inline-block;
+}
+.tilecolor {
+    background-color:red;
+}
+.tilecolumn{
+    background-color: blue;
+    height: 20px;
+    width: 20px;
+    border: 1px solid white;
+}
 .toolbox {
     border: 1px black solid;
     width: 200px;
