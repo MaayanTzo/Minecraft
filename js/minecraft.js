@@ -171,14 +171,30 @@ createGroundTiles(matrixSoil);
 
 //function to change class of tile when clicked:
 
-function changeTile() {
-    if ($(event.target).hasClass("ground")) {
-        $(event.target).toggleClass("tileSky");
-        $(event.target).toggleClass("ground");
-    } else if ($(event.target).hasClass("groundtop")) {
-        $(event.target).toggleClass("tileSky");
-        $(event.target).toggleClass("groundtop");
+function changeGroundTile() {
+    if ($(event.target).hasClass("ground") || $(event.target).hasClass("groundtop") ) {
+        $(event.target).removeClass("ground");
+        $(event.target).removeClass("groundtop");
+        $(event.target).addClass("tileSky");
     }
 }
 
-$("div.tile").on("click", changeTile);
+$("div.tile").on("click", changeGroundTile);
+
+// Tool selection
+$("#shovel").on("click",removePointerNone)
+
+function removePointerNone (){
+$(".container").css("pointer-events","all")
+
+}
+
+// TO DO
+
+//Tool selection for axes and pickaxe (duplicate funtion removePointerNone)
+
+// duplicate the tile in the inventory
+
+// selects the tile from the inventory and place anywhere
+
+// highlight unuseable tool when relevant

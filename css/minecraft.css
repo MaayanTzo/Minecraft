@@ -10,6 +10,7 @@ body {
     width: calc(22px*30);
     height: calc(22px*20);
     line-height: 0;
+    pointer-events: none
 }
 
 .tile {
@@ -52,6 +53,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+    
 }
 
 .ground {
