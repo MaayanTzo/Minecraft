@@ -92,9 +92,7 @@ createGroundTiles(matrixSoil);
 
 //function to change class of tile when clicked:
 
-function changeColor() {
-    $(event.target).addClass("ground");
-}
+
 
 $("div.tile").on("click", changeColor);
 
