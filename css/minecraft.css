@@ -25,11 +25,17 @@ body {
 }
 
 .tileLeaves {
-    background-color: #2d572c
+    background-image: url('https://i.imgur.com/3m3Oi.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .tileWood {
-    background-color: #5d432c
+    background-image: url('https://lh3.googleusercontent.com/ZjBSxSNDG6Wi-eWJ7rP65GWZtBuS7QIL6LDgv3z4ny34Ju9oL-VnEmuqmO7tNYMKwPw_z4wKXDmj740ikI_few=s500');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .tileRock {
