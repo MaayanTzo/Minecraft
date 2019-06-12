@@ -3,17 +3,17 @@ body {
     margin-top: 20px;
     display: inline-flex;
     position: relative;
-    background-size: cover
+    background-size: cover;
 }
 .container{
-    width: calc(17*30px);
-    height: calc(17*30px);
+    width: calc(22px*20);
+    height: calc(22px*20);
     line-height:0;
 }
 .tile{
     background-color: blue;
-    height: 15px;
-    width: 15px;
+    height: 20px;
+    width: 20px;
     border: 1px solid white;
     display: inline-block;
 }
@@ -25,6 +25,12 @@ body {
     height: 20px;
     width: 20px;
     border: 1px solid white;
+}
+.ground {
+    background-image: url('https://static.planetminecraft.com/files/resource_media/screenshot/1607/f18ad6e0592b315a3e001883c8db9a6e9884526.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 .toolbox {
     border: 1px black solid;

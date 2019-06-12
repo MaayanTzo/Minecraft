@@ -1,3 +1,5 @@
+//class to create matrix:
+
 class Array {
     constructor(length) {
         this.length = length;
@@ -19,9 +21,11 @@ class Array {
     }
 }
 
-var array1 = new Array(30);
-var array2 = new Array(30);
+var array1 = new Array(20);
+var array2 = new Array(20);
 var matrix = array1.createMatrix(array2);
+
+//function to create tiles in html according to matrix:
 
 function createTiles(array) {
     for (var i = 0; i < array.length; i++) {
@@ -38,8 +42,10 @@ function createTiles(array) {
 
 createTiles(matrix);
 
+//function to change class of tile when clicked:
+
 function changeColor() {
-    $(event.target).addClass("tilecolor");
+    $(event.target).addClass("ground");
 }
 
 $("div.tile").on("click", changeColor);
