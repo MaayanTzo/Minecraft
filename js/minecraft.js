@@ -122,6 +122,18 @@ function createTree() {
 
 createTree();
 
+//change selected div classes (from the matrix) to create the rocks:
+
+function createRocks() {
+    for (var i = 619; i < 621; i++) {
+        var rocks = $("div.tile:nth-child(" + i + ")");
+        rocks.addClass("tileRock");
+    }
+    var stones = $("div.tile:nth-child(630)");
+    stones.addClass("tileRock");}
+
+createRocks();
+
 //function to create top ground tiles in html according to array:
 
 function createTopGroundTiles(array) {
