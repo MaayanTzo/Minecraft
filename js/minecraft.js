@@ -91,6 +91,20 @@ function createGroundTiles(array) {
 createGroundTiles(matrixSoil);
 
 //function to change class of tile when clicked:
+//only for ground digging
+function shovelDig(event) {
+    var tileSelected= $(event.target).attr("class");
+    if ( tileSelected == "ground" || tileSelected == "groundtop"){
+    $(event.target).addClass("ground")}
+    // else {
+    //     event.pre
+        
+    // }
+
+}
+
+
+
 
 
 

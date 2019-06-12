@@ -20,6 +20,12 @@ body {
 .tilecolor {
     background-color:red;
 }
+.tileWood{
+    background-color: #2d572c
+}
+.tileLeaves{
+    background-color: #5d432c 
+}
 
 .groundtop {
     background-image: url('https://static.planetminecraft.com/files/resource_media/screenshot/1607/f18ad6e0592b315a3e001883c8db9a6e9884526.jpg');
