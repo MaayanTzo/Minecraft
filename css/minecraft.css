@@ -13,11 +13,13 @@ body {
 }
 
 .tile {
-    background-color: lightblue;
     height: 20px;
     width: 20px;
     border: 1px solid white;
     display: inline-block;
+}
+.tileSky{
+    background-color: lightblue;
 }
 
 .tilecolor {

@@ -47,10 +47,12 @@ function createTiles(array) {
     for (var i = 0; i < array.length; i++) {
         var tileRow = $("<div />");
         tileRow.addClass("tile");
+        tileRow.addClass("tileSky");
         $(".container").append(tileRow);
         for (var j = 0; j < array[i].length; j++) {
             var tileCol = $("<div />");
             tileCol.addClass("tile");
+            tileCol.addClass("tileSky");
             $(".container").append(tileCol);
         }
     }
@@ -130,7 +132,8 @@ function createRocks() {
         rocks.addClass("tileRock");
     }
     var stones = $("div.tile:nth-child(630)");
-    stones.addClass("tileRock");}
+    stones.addClass("tileRock");
+}
 
 createRocks();
 
@@ -168,10 +171,14 @@ createGroundTiles(matrixSoil);
 
 //function to change class of tile when clicked:
 
-function changeColor() {
-    $(event.target).addClass("ground");
+function changeTile() {
+    if ($(event.target).hasClass("ground")) {
+        $(event.target).toggleClass("tileSky");
+        $(event.target).toggleClass("ground");
+    } else if ($(event.target).hasClass("groundtop")) {
+        $(event.target).toggleClass("tileSky");
+        $(event.target).toggleClass("groundtop");
+    }
 }
 
-$("div.tile").on("click", changeColor);
-
-
+$("div.tile").on("click", changeTile);
