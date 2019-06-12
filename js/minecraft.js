@@ -198,3 +198,5 @@ $(".container").css("pointer-events","all")
 // selects the tile from the inventory and place anywhere
 
 // highlight unuseable tool when relevant
+
+// use modal dialog for the landing page (this or something similar)
