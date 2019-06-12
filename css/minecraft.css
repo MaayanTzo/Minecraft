@@ -32,6 +32,9 @@ body {
     background-repeat: no-repeat;
     background-size: contain;
 }
+.groundtop {
+    background-color: green;
+}
 .toolbox {
     border: 1px black solid;
     width: 200px;
