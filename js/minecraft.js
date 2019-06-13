@@ -169,10 +169,12 @@ function createGroundTiles(array) {
 
 createGroundTiles(matrixSoil);
 
-//function to change class of tile when clicked:
+
+
+//function to change class of ground tile when clicked:
 
 function changeGroundTile() {
-    if ($(event.target).hasClass("ground") || $(event.target).hasClass("groundtop") ) {
+    if ($(event.target).hasClass("ground") || $(event.target).hasClass("groundtop")) {
         invetoryItemUpdate();
         $(event.target).removeClass("ground");
         $(event.target).removeClass("groundtop");
@@ -180,31 +182,63 @@ function changeGroundTile() {
     }
 }
 
-$("div.tile").on("click", changeGroundTile);
+$(".ground").on("click", changeGroundTile);
+$(".groundtop").on("click", changeGroundTile);
 
-// Tool selection
-$("#shovel").on("click",removePointerNone)
+// Shovel Tool selection
+$("#shovel").on("click", removePointerNone)
 
-function removePointerNone (){
-$(".container").css("pointer-events","all")
+function removePointerNone() {
+    $(".container").css("pointer-events", "all")
 
 }
 
 //update inventory item:
 
-function invetoryItemUpdate (){
-    var tileClicked=$(event.target).attr("class");
+function invetoryItemUpdate() {
+    var tileClicked = $(event.target).attr("class");
     //console.log(tileClicked);
     $("#inventory-item").removeClass();
     $("#inventory-item").addClass(tileClicked);
 
 }
 
+// function to change class of stone tile:
+
+function changeStoneTile() {
+    if ($(event.target).hasClass("tileRock")) {
+        invetoryItemUpdate();
+        $(event.target).removeClass("tileRock");
+        $(event.target).addClass("tileSky");
+    }
+}
+
+$(".tileRock").on("click", changeStoneTile);
+
+// Pickaxe tool selection
+$("#pickaxe").on("click", removePointerNone)
+
+// function to change class of tree tile:
+
+function changeTreeTile() {
+    if ($(event.target).hasClass("tileWood") || $(event.target).hasClass("tileLeaves")) {
+        invetoryItemUpdate();
+        $(event.target).removeClass("tileWood");
+        $(event.target).removeClass("tileLeaves");
+        $(event.target).addClass("tileSky");
+    }
+}
+
+$(".tileWood").on("click", changeTreeTile);
+$(".tileLeaves").on("click", changeTreeTile);
+
+// Pickaxe tool selection
+$("#axe").on("click", removePointerNone)
+
 // TO DO
 
 //Tool selection for axes and pickaxe (duplicate funtion removePointerNone)
 
-// duplicate the tile in the inventory
 
 // selects the tile from the inventory and place anywhere
 
