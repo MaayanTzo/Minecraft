@@ -195,10 +195,9 @@ $(".container").css("pointer-events","all")
 function invetoryItemUpdate (){
     var tileClicked=$(event.target).attr("class");
     //console.log(tileClicked);
-    $("#inventory-item").removeClass()
+    $("#inventory-item").removeClass();
     $("#inventory-item").addClass(tileClicked);
 
-//    not updated accordingly
 }
 
 // TO DO
