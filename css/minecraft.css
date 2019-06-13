@@ -147,16 +147,3 @@ tr {
     opacity: 0.8;
     background-color: darkgrey
 }
-
-button {
-    margin: 10px;
-    border: 1px black solid
-}
-
-a {
-    text-decoration: none
-}
-
-:any-link {
-    color: black
-}

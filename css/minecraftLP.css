@@ -1,0 +1,32 @@
+body {
+    margin: 0;
+    margin-top: 20px;
+
+    background-image: url("https://media-minecraftforum.cursecdn.com/attachments/198/670/635972457037242064.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+color :white;
+font-family: cursive
+}
+
+button {
+    margin: 10px;
+    border: 1px black solid
+}
+
+a {
+    text-decoration: none
+}
+
+:any-link {
+    color: black
+}
+
+.box {
+    opacity: 0.8;
+    background-color: darkgrey;
+    display: flex
+}
