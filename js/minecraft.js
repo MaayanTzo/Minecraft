@@ -66,22 +66,31 @@ function createCloud() {
     for (var i = 217; i < 219; i++) {
         var cloud = $("div.tile:nth-child(" + i + ")");
         cloud.addClass("cloud");
+        cloud.removeClass("tileSky");
     }
     for (var i = 245; i < 250; i++) {
         var cloud = $("div.tile:nth-child(" + i + ")");
         cloud.addClass("cloud");
+        cloud.removeClass("tileSky");
+
     }
     for (var i = 252; i < 255; i++) {
         var cloud = $("div.tile:nth-child(" + i + ")");
         cloud.addClass("cloud");
+        cloud.removeClass("tileSky");
+
     }
     for (var i = 274; i < 285; i++) {
         var cloud = $("div.tile:nth-child(" + i + ")");
         cloud.addClass("cloud");
+        cloud.removeClass("tileSky");
+
     }
     for (var i = 309; i < 312; i++) {
         var cloud = $("div.tile:nth-child(" + i + ")");
         cloud.addClass("cloud");
+        cloud.removeClass("tileSky");
+
     }
 }
 
@@ -93,33 +102,43 @@ function createTree() {
     for (var i = 410; i < 415; i++) {
         var treeLeaves = $("div.tile:nth-child(" + i + ")");
         treeLeaves.addClass("tileLeaves");
+        treeLeaves.removeClass("tileSky");
     }
     for (var i = 440; i < 445; i++) {
         var treeLeaves = $("div.tile:nth-child(" + i + ")");
         treeLeaves.addClass("tileLeaves");
+        treeLeaves.removeClass("tileSky");
     }
     for (var i = 470; i < 475; i++) {
         var treeLeaves = $("div.tile:nth-child(" + i + ")");
         treeLeaves.addClass("tileLeaves");
+        treeLeaves.removeClass("tileSky");
     }
     for (var i = 500; i < 505; i++) {
         var treeLeaves = $("div.tile:nth-child(" + i + ")");
         treeLeaves.addClass("tileLeaves");
+        treeLeaves.removeClass("tileSky");
     }
     var treeLeaves = $("div.tile:nth-child(575)");
     treeLeaves.addClass("tileLeaves");
+    treeLeaves.removeClass("tileSky");
     for (var i = 604; i < 607; i++) {
         var treeLeaves = $("div.tile:nth-child(" + i + ")");
         treeLeaves.addClass("tileLeaves");
+        treeLeaves.removeClass("tileSky");
     }
     var treeTrunk = $("div.tile:nth-child(532)");
     treeTrunk.addClass("tileWood");
+    treeTrunk.removeClass("tileSky");
     var treeTrunk2 = $("div.tile:nth-child(562)");
     treeTrunk2.addClass("tileWood");
+    treeTrunk2.removeClass("tileSky");
     var treeTrunk3 = $("div.tile:nth-child(592)");
     treeTrunk3.addClass("tileWood");
+    treeTrunk3.removeClass("tileSky");
     var treeTrunk4 = $("div.tile:nth-child(622)");
     treeTrunk4.addClass("tileWood");
+    treeTrunk4.removeClass("tileSky");
 }
 
 createTree();
@@ -130,9 +149,11 @@ function createRocks() {
     for (var i = 619; i < 621; i++) {
         var rocks = $("div.tile:nth-child(" + i + ")");
         rocks.addClass("tileRock");
+        rocks.removeClass("tileSky");
     }
     var stones = $("div.tile:nth-child(630)");
     stones.addClass("tileRock");
+    stones.removeClass("tileSky");
 }
 
 createRocks();
@@ -169,8 +190,13 @@ function createGroundTiles(array) {
 
 createGroundTiles(matrixSoil);
 
-
-
+//function to select tool:
+/*
+var toolSelected=null;
+function toolSelector(){
+    if ($(event.target).hasClass("axe")){}
+}
+*/
 //function to change class of ground tile when clicked:
 
 function changeGroundTile() {
@@ -186,11 +212,11 @@ $(".ground").on("click", changeGroundTile);
 $(".groundtop").on("click", changeGroundTile);
 
 // Shovel Tool selection
-$("#shovel").on("click", removePointerNone)
+$("#shovel").on("click", removePointerNoneGround)
 
-function removePointerNone() {
-    $(".container").css("pointer-events", "all")
-
+function removePointerNoneGround() {
+    $(".ground").css("pointer-events", "all")
+    $(".groundtop").css("pointer-events", "all")
 }
 
 //update inventory item:
@@ -216,7 +242,14 @@ function changeStoneTile() {
 $(".tileRock").on("click", changeStoneTile);
 
 // Pickaxe tool selection
-$("#pickaxe").on("click", removePointerNone)
+
+function removePointerNoneStones() {
+    $(".ground").css("pointer-events","none");
+    $(".groundtop").css("pointer-events","none");
+    $(".tileRock").css("pointer-events", "all");
+
+}
+$("#pickaxe").on("click", removePointerNoneStones);
 
 // function to change class of tree tile:
 
@@ -232,8 +265,17 @@ function changeTreeTile() {
 $(".tileWood").on("click", changeTreeTile);
 $(".tileLeaves").on("click", changeTreeTile);
 
-// Pickaxe tool selection
-$("#axe").on("click", removePointerNone)
+// Axe tool selection
+
+function removePointerNoneTree() {
+    $(".ground").css("pointer-events","none");
+    $(".groundtop").css("pointer-events","none");
+    $(".tileRock").css("pointer-events", "none");
+    $(".tileLeaves").css("pointer-events", "all");
+    $(".tileWood").css("pointer-events", "all");
+
+}
+$("#axe").on("click", removePointerNoneTree);
 
 // TO DO
 
