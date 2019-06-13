@@ -7,8 +7,8 @@ body {
 }
 
 .container {
-    width: calc(22px*30);
-    height: calc(22px*20);
+    width: calc(20px*30);
+    height: calc(20px*20);
     line-height: 0;
     pointer-events: none
 }
@@ -16,7 +16,6 @@ body {
 .tile {
     height: 20px;
     width: 20px;
-    border: 1px solid white;
     display: inline-block;
 }
 .tileSky{
