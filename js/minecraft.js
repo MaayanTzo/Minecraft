@@ -173,6 +173,7 @@ createGroundTiles(matrixSoil);
 
 function changeGroundTile() {
     if ($(event.target).hasClass("ground") || $(event.target).hasClass("groundtop") ) {
+        invetoryItemUpdate();
         $(event.target).removeClass("ground");
         $(event.target).removeClass("groundtop");
         $(event.target).addClass("tileSky");
@@ -187,6 +188,17 @@ $("#shovel").on("click",removePointerNone)
 function removePointerNone (){
 $(".container").css("pointer-events","all")
 
+}
+
+//update inventory item:
+
+function invetoryItemUpdate (){
+    var tileClicked=$(event.target).attr("class");
+    //console.log(tileClicked);
+    $("#inventory-item").removeClass()
+    $("#inventory-item").addClass(tileClicked);
+
+//    not updated accordingly
 }
 
 // TO DO
