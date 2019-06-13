@@ -1,4 +1,4 @@
-var inventoryCounter =1;
+var inventoryCounter = 0;
 
 //class to create matrix:
 
@@ -284,31 +284,25 @@ $("#axe").on("click", removePointerNoneTree);
 
 $("#inventory-item").mousedown(function (e) {
     console.log(inventoryCounter)
-    if( inventoryCounter >0){
-        if (e.which == 1) {
+    if (e.which == 1) {
+        $(".container").css("pointer-events", "all");
+        $("#inventory-item").addClass("selected")
+    }
+});
+
+$("div.tile").mousedown(function (e) {
+    console.log(inventoryCounter)
+    if (e.which == 1) {
+        if ($("#inventory-item").hasClass("selected")) {
             var inventoryItemPickedClass = $("#inventory-item").attr("class");
-            $(".container").css("pointer-events", "all");
-            inventoryCounter=0;
-            $("div.tile").mousedown(function (e) {
-                console.log(inventoryCounter)
-                if (e.which == 1) {
-                    if(inventoryCounter==0){
-                    $(e.target).removeClass();
-                    $(e.target).addClass(inventoryItemPickedClass);
-                    $("#inventory-item").removeClass()
-                    
-                    console.log(inventoryCounter);
-                    inventoryCounter++;
-                    }
-                }
-         })
-     }
-}});
+            $(e.target).addClass(inventoryItemPickedClass);
+            $("#inventory-item").removeClass()
+        }
+    }
+})
+
 // TO DO
 
-
-
-// selects the tile from the inventory and place anywhere
 
 // highlight unuseable tool when relevant
 
