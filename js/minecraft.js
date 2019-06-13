@@ -1,3 +1,5 @@
+var inventoryCounter =1;
+
 //class to create matrix:
 
 class Array {
@@ -190,13 +192,7 @@ function createGroundTiles(array) {
 
 createGroundTiles(matrixSoil);
 
-//function to select tool:
-/*
-var toolSelected=null;
-function toolSelector(){
-    if ($(event.target).hasClass("axe")){}
-}
-*/
+
 //function to change class of ground tile when clicked:
 
 function changeGroundTile() {
@@ -217,6 +213,10 @@ $("#shovel").on("click", removePointerNoneGround)
 function removePointerNoneGround() {
     $(".ground").css("pointer-events", "all")
     $(".groundtop").css("pointer-events", "all")
+    $(".tileRock").css("pointer-events", "none");
+    $(".tileLeaves").css("pointer-events", "none");
+    $(".tileWood").css("pointer-events", "none");
+
 }
 
 //update inventory item:
@@ -244,9 +244,11 @@ $(".tileRock").on("click", changeStoneTile);
 // Pickaxe tool selection
 
 function removePointerNoneStones() {
-    $(".ground").css("pointer-events","none");
-    $(".groundtop").css("pointer-events","none");
+    $(".ground").css("pointer-events", "none");
+    $(".groundtop").css("pointer-events", "none");
     $(".tileRock").css("pointer-events", "all");
+    $(".tileLeaves").css("pointer-events", "none");
+    $(".tileWood").css("pointer-events", "none");
 
 }
 $("#pickaxe").on("click", removePointerNoneStones);
@@ -268,8 +270,8 @@ $(".tileLeaves").on("click", changeTreeTile);
 // Axe tool selection
 
 function removePointerNoneTree() {
-    $(".ground").css("pointer-events","none");
-    $(".groundtop").css("pointer-events","none");
+    $(".ground").css("pointer-events", "none");
+    $(".groundtop").css("pointer-events", "none");
     $(".tileRock").css("pointer-events", "none");
     $(".tileLeaves").css("pointer-events", "all");
     $(".tileWood").css("pointer-events", "all");
@@ -277,9 +279,28 @@ function removePointerNoneTree() {
 }
 $("#axe").on("click", removePointerNoneTree);
 
+
+// inventory Picker function
+while ( inventoryCounter >0){
+$("#inventory-item").mousedown(function (e) {
+    if (e.which == 1) {
+        var inventoryItemPickedClass = $("#inventory-item").attr("class");
+
+        console.log(inventoryItemPickedClass);
+        $(".container").css("pointer-events", "all");
+        $("div.tile").mousedown(function (e) {
+            if (e.which == 1) {
+                $(e.target).removeClass();
+                $(e.target).addClass(inventoryItemPickedClass);
+                console.log($(e.target));
+                $("#inventory-item").removeClass()
+                inventoryCounter--;
+            }
+        })
+    }
+});}
 // TO DO
 
-//Tool selection for axes and pickaxe (duplicate funtion removePointerNone)
 
 
 // selects the tile from the inventory and place anywhere
