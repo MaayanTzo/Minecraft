@@ -281,24 +281,29 @@ $("#axe").on("click", removePointerNoneTree);
 
 
 // inventory Picker function
-while ( inventoryCounter >0){
-$("#inventory-item").mousedown(function (e) {
-    if (e.which == 1) {
-        var inventoryItemPickedClass = $("#inventory-item").attr("class");
 
-        console.log(inventoryItemPickedClass);
-        $(".container").css("pointer-events", "all");
-        $("div.tile").mousedown(function (e) {
-            if (e.which == 1) {
-                $(e.target).removeClass();
-                $(e.target).addClass(inventoryItemPickedClass);
-                console.log($(e.target));
-                $("#inventory-item").removeClass()
-                inventoryCounter--;
-            }
-        })
-    }
-});}
+$("#inventory-item").mousedown(function (e) {
+    console.log(inventoryCounter)
+    if( inventoryCounter >0){
+        if (e.which == 1) {
+            var inventoryItemPickedClass = $("#inventory-item").attr("class");
+            $(".container").css("pointer-events", "all");
+            inventoryCounter=0;
+            $("div.tile").mousedown(function (e) {
+                console.log(inventoryCounter)
+                if (e.which == 1) {
+                    if(inventoryCounter==0){
+                    $(e.target).removeClass();
+                    $(e.target).addClass(inventoryItemPickedClass);
+                    $("#inventory-item").removeClass()
+                    
+                    console.log(inventoryCounter);
+                    inventoryCounter++;
+                    }
+                }
+         })
+     }
+}});
 // TO DO
 
 
