@@ -58,7 +58,7 @@ body {
 }
 
 .ground {
-    background-image: url('../images/ground_below_tile.png');
+    background-image: url('../images/ground_below_tile1.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
