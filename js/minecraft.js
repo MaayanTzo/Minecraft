@@ -1,4 +1,3 @@
-var inventoryCounter = 0;
 
 //class to create matrix:
 
@@ -292,7 +291,6 @@ $("#axe").on("click", removePointerNoneTree);
 // inventory Picker function
 
 $("#inventory-item").mousedown(function (e) {
-    console.log(inventoryCounter)
     if (e.which == 1) {
         $(".container").css("pointer-events", "all");
         $("#inventory-item").addClass("selected")
@@ -300,7 +298,6 @@ $("#inventory-item").mousedown(function (e) {
 });
 
 $("div.tile").mousedown(function (e) {
-    console.log(inventoryCounter)
     if (e.which == 1) {
         if ($("#inventory-item").hasClass("selected")) {
             var inventoryItemPickedClass = $("#inventory-item").attr("class");
@@ -310,9 +307,3 @@ $("div.tile").mousedown(function (e) {
     }
 })
 
-// TO DO
-
-
-// highlight unuseable tool when relevant
-
-// use modal dialog for the landing page (this or something similar)
