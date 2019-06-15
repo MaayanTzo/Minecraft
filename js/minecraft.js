@@ -211,6 +211,9 @@ $(".groundtop").on("click", changeGroundTile);
 $("#shovel").on("click", removePointerNoneGround)
 
 function removePointerNoneGround() {
+    $("#shovel").toggleClass("selectedTool");
+    $("#axe").removeClass("selectedTool");
+    $("#pickaxe").removeClass("selectedTool");
     $(".ground").css("pointer-events", "all")
     $(".groundtop").css("pointer-events", "all")
     $(".tileRock").css("pointer-events", "none");
@@ -244,6 +247,9 @@ $(".tileRock").on("click", changeStoneTile);
 // Pickaxe tool selection
 
 function removePointerNoneStones() {
+    $("#pickaxe").toggleClass("selectedTool");
+    $("#axe").removeClass("selectedTool");
+    $("#shovel").removeClass("selectedTool");
     $(".ground").css("pointer-events", "none");
     $(".groundtop").css("pointer-events", "none");
     $(".tileRock").css("pointer-events", "all");
@@ -270,6 +276,9 @@ $(".tileLeaves").on("click", changeTreeTile);
 // Axe tool selection
 
 function removePointerNoneTree() {
+    $("#axe").toggleClass("selectedTool");
+    $("#pickaxe").removeClass("selectedTool");
+    $("#shovel").removeClass("selectedTool");
     $(".ground").css("pointer-events", "none");
     $(".groundtop").css("pointer-events", "none");
     $(".tileRock").css("pointer-events", "none");

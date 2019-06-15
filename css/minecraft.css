@@ -148,3 +148,7 @@ td {
     opacity: 0.8;
     background-color: darkgrey
 }
+
+.selectedTool {
+    background-color: blue;
+}
